@@ -1,2 +1,6 @@
 # chat-live-web
-Chat live coming soon
+main part of web live chat
+## capture
+
+<img src="screencaps/Cap-1.jpg"><br>
+<img src="screencaps/Cap-2.jpg"><br>
