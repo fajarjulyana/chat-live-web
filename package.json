@@ -1,0 +1,24 @@
+{
+  "name": "chat-live-web",
+  "version": "1.0.0",
+  "description": "Chat live coming soon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fajarjulyana/chat-live-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fajarjulyana/chat-live-web/issues"
+  },
+  "homepage": "https://github.com/fajarjulyana/chat-live-web#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.6.1"
+  }
+}

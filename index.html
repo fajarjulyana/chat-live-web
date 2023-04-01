@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Chat</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+    #chat-box {
+      height: 500px;
+      overflow-y: scroll;
+    }
+    #message-input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-box"></div>
+  <input type="text" id="message-input" placeholder="Type your message">
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+    const chatBox = document.getElementById('chat-box');
+    const messageInput = document.getElementById('message-input');
+
+    messageInput.addEventListener('keyup', (event) => {
+      if (event.keyCode === 13) {
+        const message = messageInput.value.trim();
+        if (message) {
+          socket.emit('chat message', message);
+          messageInput.value = '';
+        }
+      }
+    });
+
+    socket.on('chat message', (msg) => {
+      const newMessage = document.createElement('div');
+      newMessage.textContent = msg;
+      chatBox.appendChild(newMessage);
+    });
+  </script>
+</body>
+</html>
